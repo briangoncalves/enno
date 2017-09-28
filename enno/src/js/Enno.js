@@ -1,3 +1,13 @@
+(function(){
+    if(window.console && console.log){
+        var old = console.log;
+        console.log = function(){         
+            $.notify("" + arguments[0] + "", "info");
+            old.apply(this, arguments)
+        }
+    }  
+})();
+
 function Enno() {
     this.source = null;
     this.sourceListing = null;
